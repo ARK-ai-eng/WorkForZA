@@ -46,7 +46,10 @@ export default function LandingPage() {
           <div style={{ width: 32, height: 32, borderRadius: 8, background: C.teal, display: "flex", alignItems: "center", justifyContent: "center" }}>
             <span style={{ fontSize: 16 }}>⚡</span>
           </div>
-          <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: 17, color: C.text }}>WorkforZA</span>
+          <div>
+            <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: 17, color: C.text }}>WorkforZA</span>
+            <div style={{ fontSize: 9.5, color: C.muted, fontWeight: 500, letterSpacing: "0.03em", marginTop: -1 }}>by AISmarterFlow</div>
+          </div>
         </div>
 
         {/* Desktop Nav Links */}
@@ -298,15 +301,53 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ── Exklusiver Partner Banner ── */}
+      <section style={{ background: "linear-gradient(135deg, #0f172a 0%, #1E2433 60%, #0D9488 100%)", padding: "56px 20px" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(13,148,136,0.2)", border: "1px solid rgba(13,148,136,0.4)", borderRadius: 20, padding: "4px 14px", fontSize: 11, fontWeight: 700, color: C.teal, marginBottom: 24, textTransform: "uppercase", letterSpacing: "0.08em" }}>
+            ★ Offizieller Exklusivpartner
+          </div>
+          <h2 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 800, fontSize: "clamp(22px, 4vw, 36px)", color: "#f1f5f9", margin: "0 0 16px", lineHeight: 1.2 }}>
+            WorkforZA ist exklusiv erhältlich über<br />
+            <span style={{ color: C.teal }}>DEM Personalservice GmbH</span>
+          </h2>
+          <p style={{ fontSize: 15, color: "#94a3b8", lineHeight: 1.75, maxWidth: 620, margin: "0 auto 32px" }}>
+            Als einziger autorisierter Vertriebspartner von WorkforZA bietet die <strong style={{ color: "#f1f5f9" }}>DEM Personalservice GmbH</strong> ihren Kunden exklusiven Zugang zur leistungsstärksten Recruiting-Plattform für Personaldienstleister im DACH-Raum. Kein Direktkauf — nur über DEM.
+          </p>
+          <div style={{ display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
+            {[
+              { icon: "🏆", label: "Exklusivvertrieb", desc: "Einziger autorisierter Partner" },
+              { icon: "🔐", label: "Direkter Zugang", desc: "Nur über DEM erhältlich" },
+              { icon: "🤝", label: "Persönliche Betreuung", desc: "Kein anonymer Self-Service" },
+            ].map((item) => (
+              <div key={item.label} style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 10, padding: "18px 24px", minWidth: 160, textAlign: "center" }}>
+                <div style={{ fontSize: 22, marginBottom: 8 }}>{item.icon}</div>
+                <div style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: 13, color: "#f1f5f9", marginBottom: 4 }}>{item.label}</div>
+                <div style={{ fontSize: 12, color: "#64748b" }}>{item.desc}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ marginTop: 36, padding: "20px 28px", background: "rgba(13,148,136,0.12)", border: "1px solid rgba(13,148,136,0.3)", borderRadius: 10, display: "inline-block" }}>
+            <p style={{ margin: 0, fontSize: 13, color: "#94a3b8" }}>Interesse an WorkforZA?</p>
+            <p style={{ margin: "4px 0 0", fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: 15, color: "#f1f5f9" }}>
+              Kontaktiere direkt: <span style={{ color: C.teal }}>DEM Personalservice GmbH</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── Footer ── */}
       <footer style={{ borderTop: `1px solid ${C.border}`, padding: "20px", display: "flex", flexDirection: "column", alignItems: "center", gap: 12, textAlign: "center" }}
         className="sm:flex-row sm:justify-between sm:text-left"
       >
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <div style={{ width: 24, height: 24, borderRadius: 6, background: C.teal, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12 }}>⚡</div>
-          <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: 13, color: C.text }}>WorkforZA</span>
+          <div>
+            <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: 13, color: C.text }}>WorkforZA</span>
+            <div style={{ fontSize: 10, color: C.muted }}>by AISmarterFlow</div>
+          </div>
         </div>
-        <p style={{ fontSize: 12, color: C.muted, margin: 0 }}>© 2026 WorkforZA GmbH. Alle Rechte vorbehalten.</p>
+        <p style={{ fontSize: 12, color: C.muted, margin: 0 }}>© 2026 AISmarterFlow. WorkforZA ist eine Marke von AISmarterFlow.</p>
         <div style={{ display: "flex", gap: 16, fontSize: 12, color: C.muted }}>
           <a href="#" style={{ color: C.muted, textDecoration: "none" }}>Datenschutz</a>
           <a href="#" style={{ color: C.muted, textDecoration: "none" }}>Impressum</a>
