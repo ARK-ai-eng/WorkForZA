@@ -1,0 +1,208 @@
+
+/
+
+Zusammenarbeiten
+
+Teilen
+Der Prototyp wurde erfolgreich auf GitHub gepusht, inklusive aller Seiten, Design-Systeme und der Dokumentation. Weiter mit der Erstellung der Kandidaten-Pipeline-Seite.
+
+ahmm eine wichtige sache workforZA ist eine Marke von AISmarterFlow. zweitens es wäre wichtig (ego des potenziellen partners streichen, er bekommt exklusive vertriebsrechte also kunden können nur über ihn direkt kaufen. das ist unser exklusiver partner DEM Personalservice GmbH. Kannst du das iwo prominent platzieren damit sein ego gestreichelt wird?
+Verstanden! Zwei klare Änderungen:
+"WorkforZA by AISmarterFlow" — Markenherkunft sichtbar machen
+DEM Personalservice GmbH als exklusiver Vertriebspartner — prominent und ego-streichelnd platzieren, so dass er sich als einzigen Zugang zur Plattform sieht
+Ich baue das jetzt ein.
+Ich integriere die Markenkennzeichnung "WorkforZA by AISmarterFlow" und platziere DEM Personalservice GmbH prominent als exklusiven Vertriebspartner, um die Marke zu stärken.
+
+Die Marke "WorkforZA" wird nun im Logo mit "by AISmarterFlow" ergänzt. Zudem füge ich einen exklusiven Partner-Banner für DEM Personalservice GmbH im Footer ein.
+
+Die Markenbezeichnung wurde im Logo aktualisiert, und der exklusive Partner-Banner für DEM Personalservice GmbH ist nun im Footer sichtbar. Nächster Schritt: Überprüfung und Abschluss.
+
+WorkforZA 2.0 – Lead Intelligence Platform
+Nicht veröffentlicht
+12:17 2/27
+
+Zwei Änderungen sind live — auch auf GitHub gepusht:
+1. WorkforZA by AISmarterFlow — Im Logo (Nav + Footer) steht jetzt klein "by AISmarterFlow" darunter. Der Footer zeigt: "© 2026 AISmarterFlow. WorkforZA ist eine Marke von AISmarterFlow."
+2. DEM Personalservice GmbH — Exklusivpartner-Sektion — Ein dunkler Premium-Banner direkt vor dem Footer mit der klaren Botschaft: "WorkforZA ist exklusiv erhältlich über DEM Personalservice GmbH" — mit drei Highlight-Kacheln (🏆 Exklusivvertrieb, 🔐 Direkter Zugang, 🤝 Persönliche Betreuung) und dem Hinweis "Kein Direktkauf — nur über DEM."
+Mögliche nächste Schritte:
+Logo von DEM Personalservice in der Exklusivpartner-Sektion einbinden — ein offizielles Firmenlogo macht die Partnerschaft noch glaubwürdiger und professioneller.
+Kontaktformular oder Direktlink in der Partner-Sektion — ein "Jetzt bei DEM anfragen"-Button mit E-Mail-Link oder Telefonnummer, damit Interessenten sofort handeln können.
+"Powered by AISmarterFlow" auch in der App-Sidebar klein einblenden — so sehen es auch die täglichen Nutzer, nicht nur die Landing-Page-Besucher.
+WorkforZA 2.0 – Lead Intelligence Platform
+Nicht veröffentlicht
+12:17 2/27
+
+Wie war dieses Ergebnis?
+Der aktuelle Stand beinhaltet das Logo mit "by AISmarterFlow" und den Footer sowie eine prominente DEM Personalservice Exklusivpartner-Sektion mit Banner und Highlight-Kacheln. Die Änderungen sind auf GitHub aktualisiert. Als nächstes könnten ein Firmenlogo, ein Kontaktformular sowie eine Sidebar-Integration für "Powered by AISmarterFlow" umgesetzt werden.
+
+hast du das im github drüben?
+Ja! Der letzte Push war erfolgreich — der Commit c006edf mit dem Titel "feat: AISmarterFlow-Branding + DEM Personalservice Exklusivpartner-Sektion" ist auf github.com/ARK-ai-eng/WorkForZA im Branch main — kannst du direkt nachschauen.
+User's business strategy and communication preferences for AISmarterFlow
+
+
+deploymentplan für linux vps erstellen und auf github repo pushen
+Ich erstelle jetzt einen vollständigen Deployment-Plan für einen Linux VPS und pushe ihn direkt ins GitHub-Repo.
+Der letzte Commit mit AISmarterFlow-Branding ist auf GitHub im Hauptbranch. Nächster Schritt: vollständigen Deployment-Plan für Linux VPS erstellen und ins Repo pushen.
+
+Ich habe die vollständige Deployment-Dokumentation, Dockerfile und docker-compose.yml erstellt. Nächster Schritt: Nginx-Config und Systemd-Service für das Deployment einrichten.
+
+Ich habe Nginx-Konfigurationen für SPA und VPS erstellt sowie ein Deployment-Skript. Nächster Schritt: Systemd-Service für automatisierten Start einrichten.
+
+Das CI/CD-Workflow-Skript wurde erfolgreich erstellt. Nächster Schritt: systemd-Service für automatischen Start der Anwendung konfigurieren.
+
+Manus has successfully resumed the computer without losing any file. You may now continue with the previous task.
+
+Fast alles gepusht — nur die GitHub Actions Workflow-Datei (.github/workflows/deploy.yml) wurde blockiert, weil der GitHub App-Token keine workflows-Berechtigung hat. Das ist eine GitHub-Sicherheitsbeschränkung.
+Alle anderen Dateien sind erfolgreich gepusht:
+Datei
+Status
+DEPLOYMENT.md
+✅ gepusht
+Dockerfile
+✅ gepusht
+docker-compose.yml
+✅ gepusht
+deploy/nginx-spa.conf
+✅ gepusht
+deploy/nginx-vps.conf
+✅ gepusht
+deploy/deploy.sh
+✅ gepusht
+.github/workflows/deploy.yml
+⚠️ manuell hinzufügen
+Für die Workflow-Datei gibt es zwei Wege:
+Option 1 (schnell): Ich hänge die Datei hier als Anhang an — du kopierst sie manuell in dein Repo unter .github/workflows/deploy.yml und pushst sie selbst (der Repo-Owner hat die workflows-Berechtigung).
+Option 2: Im GitHub-Repo direkt über die Web-UI: "Add file" → "Create new file" → Pfad .github/workflows/deploy.yml eingeben → Inhalt einfügen → Commit.
+Soll ich dir die Datei als Anhang schicken?
+ja
+ja
+ja
+Hier sind beide Dateien im Anhang:
+So fügst du den Workflow ein (2 Minuten):
+Gehe zu github.com/ARK-ai-eng/WorkForZA
+Klicke auf "Add file" → "Create new file"
+Trage als Dateiname ein: .github/workflows/deploy.yml
+Kopiere den Inhalt der angehängten deploy.yml hinein
+Klicke "Commit changes"
+Danach noch 4 Secrets im Repo anlegen (Settings → Secrets and variables → Actions → New repository secret):
+Secret
+Wert
+VPS_HOST
+IP-Adresse deines VPS
+VPS_USER
+workforza
+VPS_SSH_KEY
+Privater SSH-Key (PEM-Format)
+VPS_PORT
+22
+Ab dann läuft bei jedem Push auf main automatisch: Build → TypeCheck → Deploy auf VPS → Health-Check.
+deploy.yml
+Code · 2.66 KB
+WorkforZA — Deployment-Plan für Linux VPS
+Markdown · 13.04 KB
+Alle Dateien in dieser Aufgabe ansehen
+Aufgabe abgeschlossen
+Wie war dieses Ergebnis?
+Empfohlene Folgefragen
+
+
+GitHub
+
+deploy.yml
+name: Deploy WorkforZA to VPS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and Type-Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: latest
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/pnpm/store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-pnpm-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: TypeScript check
+        run: pnpm exec tsc --noEmit
+
+      - name: Build
+        run: pnpm build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ github.sha }}
+          path: dist/
+          retention-days: 7
+
+  deploy:
+    name: Deploy to VPS
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: production
+      url: https://app.workforza.de
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            set -e
+            cd /home/workforza/WorkForZA
+            git pull origin main
+            docker build -t workforza:latest .
+            docker compose down
+            docker compose up -d
+            sleep 8
+            docker compose ps
+            echo "Deployment OK: $(git rev-parse --short HEAD) @ $(date)"
+
+      - name: Health-Check
+        run: |
+          sleep 15
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://app.workforza.de || echo "000")
+          echo "HTTP Status: $STATUS"
+          [ "$STATUS" = "200" ] && echo "Health-Check OK" || exit 1
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "| Feld | Wert |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Commit | \`${{ github.sha }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Branch | \`${{ github.ref_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Ausgeloest von | ${{ github.actor }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| URL | https://app.workforza.de |" >> $GITHUB_STEP_SUMMARY
+Wie kann man die Jobradar-Website analysieren und nachbauen? - Manus
