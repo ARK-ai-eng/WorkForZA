@@ -3,17 +3,17 @@ FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-# pnpm aktivieren
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# pnpm aktivieren (exakte Version aus package.json)
+RUN corepack enable && corepack prepare pnpm@10.4.1 --activate
 
-# Abhängigkeiten installieren (nur package files zuerst für Layer-Caching)
+# Abhängigkeiten installieren:
+# patches/ muss VOR pnpm install kopiert werden (pnpm-patch-Requirement)
 COPY package.json pnpm-lock.yaml ./
+COPY patches/ ./patches/
 RUN pnpm install --frozen-lockfile
 
-# Quellcode kopieren
+# Quellcode kopieren und bauen
 COPY . .
-
-# Produktions-Build
 RUN pnpm build
 
 # ── Stage 2: Production (Nginx) ──────────────────────────────────────────────
@@ -25,7 +25,7 @@ COPY --from=builder /app/dist/public /usr/share/nginx/html
 # Nginx-Konfiguration für SPA-Routing
 COPY deploy/nginx-spa.conf /etc/nginx/conf.d/default.conf
 
-# Nicht-root-Benutzer für Sicherheit
+# Berechtigungen setzen
 RUN chown -R nginx:nginx /usr/share/nginx/html && \
     chmod -R 755 /usr/share/nginx/html
 
