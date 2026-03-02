@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  workforza:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    image: workforza:latest
+    container_name: workforza_app
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    labels:
+      - "com.workforza.service=frontend"
+      - "com.workforza.version=1.0"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # Watchtower: automatische Container-Updates bei neuem Image
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 300 --cleanup workforza_app
+    environment:
+      - WATCHTOWER_NOTIFICATIONS=email
+      - WATCHTOWER_NOTIFICATION_EMAIL_FROM=deploy@workforza.de
+      - WATCHTOWER_NOTIFICATION_EMAIL_TO=admin@workforza.de
